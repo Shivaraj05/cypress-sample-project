@@ -1,0 +1,5 @@
+{
+  "cypress\\e2e\\spec1.cy.ts": { "time": 11647, "weight": 7 },
+  "cypress\\e2e\\spec2.cy.ts": { "time": 20958, "weight": 14 },
+  "cypress\\e2e\\spec3.cy.ts": { "time": 11328, "weight": 7 }
+}

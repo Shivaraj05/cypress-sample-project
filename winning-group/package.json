@@ -1,0 +1,42 @@
+{
+  "name": "winning-group-task-v1",
+  "version": "1.0.0",
+  "description": "Technical task from Winning Group",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "e2e": "cypress run --browser chrome --headless",
+    "e2e:parallel": "cypress-parallel -s e2e -t 4 -d 'cypress/e2e/*.ts'  -r 'mochawesome' -o 'reportDir=cypress/reports/mocha/,overwrite=false,html=false,json=true'",
+    "clean:reports": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "lint": "eslint --ext .ts",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "pretest": "npm run lint && npm run clean:reports",
+    "scripts": "cypress run",
+    "combine:reports": "mochawesome-merge 'cypress/reports/mocha/*.json' > cypress/reports/mochareports/report.json",
+    "generate:report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine:reports && npm run generate:report",
+    "test": "npm run e2e || npm run posttest",
+    "test:parallel": "npm run clean:reports && npm run e2e:parallel && npm run posttest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@aerokube/cypress-moon": "^1.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "cypress": "^13.3.2",
+    "cypress-mochawesome-reporter": "^3.6.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-parallel": "^0.13.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-cypress": "2.14.0",
+    "eslint-plugin-json-format": "2.0.1",
+    "eslint-plugin-mocha": "10.1.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "prettier": "3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
