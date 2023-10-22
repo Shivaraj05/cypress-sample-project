@@ -7,7 +7,7 @@ Please find some guidelines below,
 ## Format the prject - 
 `npm run format`
 
-## To run tests use -
+## To run tests -
 `npm run test`
 
 ## I have used `cypress-parallel` package to run tests in parallel - 
