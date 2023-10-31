@@ -1,7 +1,7 @@
 # cypress-project
 A sample cypress project
 
-## install all dependencies from the root directory
+## Install all dependencies from the root directory
 npm install
 
 ## Format the prject - 
