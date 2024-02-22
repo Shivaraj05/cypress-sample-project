@@ -1,13 +1,13 @@
-# winning-group-task
-Winning group technical task
+# cypress-project
+A sample cypress project
 
-I have tried answering all questions. Tests are working fine in headless with chrome browser option.
-Please find some guidelines below,
+## Install all dependencies from the root directory
+npm install
 
 ## Format the prject - 
 `npm run format`
 
-## To run tests use -
+## To run tests -
 `npm run test`
 
 ## I have used `cypress-parallel` package to run tests in parallel - 
